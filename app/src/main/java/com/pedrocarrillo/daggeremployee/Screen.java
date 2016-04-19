@@ -7,4 +7,8 @@ public class Screen {
 
     int inches;
 
+    public Screen(int inches) {
+        this.inches = inches;
+    }
+
 }

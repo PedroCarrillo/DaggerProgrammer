@@ -9,8 +9,8 @@ public class Keyboard {
 
     String type;
 
-    public Keyboard() {
-        type = "mechanic";
+    public Keyboard(String type) {
+        this.type = type;
     }
 
 }

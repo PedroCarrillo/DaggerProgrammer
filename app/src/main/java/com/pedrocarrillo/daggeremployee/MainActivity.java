@@ -10,7 +10,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Programmer programmer = new Programmer();
+
+        Coffee coffee = new Coffee();
+        RedBull redBull = new RedBull();
+
+        // Para crear un Computer necesito un Keyboard,Mouse y Screen
+
+        Keyboard keyboard = new Keyboard("mechanical");
+        Mouse mouse = new Mouse(6000);
+        Screen screen = new Screen(20);
+
+        Computer computer =  new Computer("hp", 2, keyboard, mouse, screen);
+
+        //Para crear un programmer necesito un Energizer y un Computer
+        Programmer programmer = new Programmer("Pedro Carrillo", "12345678", redBull, computer);
+
         programmer.energizer.energize();
 
     }

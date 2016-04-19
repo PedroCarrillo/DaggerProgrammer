@@ -11,12 +11,12 @@ public class Computer {
     Mouse mouse;
     Screen screen;
 
-    public Computer() {
-        model = "Hp";
-        usbPorts = 2;
-        keyboard = new Keyboard();
-        mouse = new Mouse();
-        screen = new Screen();
+    public Computer(String model, int usbPorts, Keyboard keyboard, Mouse mouse, Screen screen) {
+        this.model = model;
+        this.usbPorts = usbPorts;
+        this.keyboard = keyboard;
+        this.mouse = mouse;
+        this.screen = screen;
     }
 
 }

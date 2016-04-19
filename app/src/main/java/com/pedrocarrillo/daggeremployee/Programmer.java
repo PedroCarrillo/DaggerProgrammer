@@ -10,11 +10,11 @@ public class Programmer {
     public Energizer energizer;
     public Computer computer;
 
-    public Programmer() {
-        name = "Pedro";
-        phoneNumber = "001201020";
-        energizer = new RedBull();
-        computer = new Computer();
+    public Programmer(String name, String phoneNumber, Energizer energizer, Computer computer) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.energizer = energizer;
+        this.computer = computer;
     }
 
 }

@@ -7,8 +7,8 @@ public class Mouse {
 
     int dpi;
 
-    public Mouse() {
-        dpi = 6000;
+    public Mouse(int dpi) {
+        this.dpi = dpi;
     }
 
 }
