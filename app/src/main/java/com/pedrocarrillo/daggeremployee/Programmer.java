@@ -1,20 +1,24 @@
 package com.pedrocarrillo.daggeremployee;
 
+import javax.inject.Inject;
+
 /**
  * Created by PedroCarrillo on 4/19/16.
  */
 public class Programmer {
 
-    public String name;
-    public String phoneNumber;
     public Energizer energizer;
     public Computer computer;
 
-    public Programmer(String name, String phoneNumber, Energizer energizer, Computer computer) {
-        this.name = name;
-        this.phoneNumber = phoneNumber;
+    @Inject
+    public Programmer (Energizer energizer, Computer computer) {
         this.energizer = energizer;
         this.computer = computer;
+    }
+
+    public void startDay() {
+        computer.on();
+        energizer.drink();
     }
 
 }

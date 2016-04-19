@@ -8,7 +8,7 @@ import android.util.Log;
 public class RedBull implements Energizer {
 
     @Override
-    public void energize() {
+    public void drink() {
         Log.d("Redbull", "gives you wings");
     }
 

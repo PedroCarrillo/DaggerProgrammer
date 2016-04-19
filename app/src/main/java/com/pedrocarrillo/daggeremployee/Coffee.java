@@ -8,7 +8,7 @@ import android.util.Log;
 public class Coffee implements Energizer {
 
     @Override
-    public void energize() {
+    public void drink() {
         Log.d("Coffee", "wakes you up");
     }
 }

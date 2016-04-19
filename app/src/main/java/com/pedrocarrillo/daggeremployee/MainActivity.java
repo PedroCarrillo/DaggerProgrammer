@@ -3,7 +3,12 @@ package com.pedrocarrillo.daggeremployee;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import javax.inject.Inject;
+
 public class MainActivity extends AppCompatActivity {
+
+    @Inject
+    Programmer globalProgrammer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -11,21 +16,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        Coffee coffee = new Coffee();
-        RedBull redBull = new RedBull();
+        Programmer programmer = DaggerDemoComponent.builder()
+                .computerModule(new ComputerModule("macbook", 10))
+                .build()
+                .programmer();
 
-        // Para crear un Computer necesito un Keyboard,Mouse y Screen
 
-        Keyboard keyboard = new Keyboard("mechanical");
-        Mouse mouse = new Mouse(6000);
-        Screen screen = new Screen(20);
+        DaggerDemoComponent.builder().computerModule(new ComputerModule("macbook", 10)).build().inject(this);
 
-        Computer computer =  new Computer("hp", 2, keyboard, mouse, screen);
-
-        //Para crear un programmer necesito un Energizer y un Computer
-        Programmer programmer = new Programmer("Pedro Carrillo", "12345678", redBull, computer);
-
-        programmer.energizer.energize();
-
+        turnOn();
     }
+
+    private void turnOn() {
+        globalProgrammer.startDay();
+    }
+
+
 }

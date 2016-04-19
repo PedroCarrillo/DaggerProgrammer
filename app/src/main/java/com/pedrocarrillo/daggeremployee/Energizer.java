@@ -5,6 +5,6 @@ package com.pedrocarrillo.daggeremployee;
  */
 public interface Energizer {
 
-    void energize();
+    void drink();
 
 }
